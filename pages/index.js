@@ -1,7 +1,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import Header from '../components/Header';
+// import Header from '../components/Header';
 import ImageComponent from '../components/ImageComponent';
+import HeaderComponent from '../components/HeaderComponent';
 
 export default function Home() {
   return (
@@ -37,7 +38,7 @@ export default function Home() {
       </nav>
 
       <main>
-        <Header />
+        <HeaderComponent />
         <h2>Check out our product categories</h2>
         <p>Here you can nd the data sheets of all our </p>{' '}
         <a>product categories.</a>
