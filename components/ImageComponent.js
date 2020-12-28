@@ -13,6 +13,7 @@ const textStyles = css`
   flex-direction: row;
   flex-wrap: wrap;
   margin: 0px 10px;
+  padding-bottom: 10px;
 `;
 
 export default function Imagecomponent() {

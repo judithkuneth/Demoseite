@@ -7,29 +7,55 @@ const componentStyles = css`
   position: absolute;
   top: 40%;
   left: 10%;
-  height: 100px;
-  background-color: #bfabab66;
-  width: 450px;
+  height: 110px;
+  background-color: #e2d9d95e;
+  width: 400px;
+  @media (max-width: 768px) {
+    height: 150px;
+    width: 70%;
+    h1 {
+      font-size: 28px;
+    }
+  }
+  @media (max-width: 350px) {
+    height: 200px;
+    width: 70%;
+    h1 {
+      font-size: 24px;
+    }
+  }
 `;
-
+const imageStyles = css`
+  height: 600px;
+  width: 100%;
+  object-fit: cover;
+`;
 const buttonStyles = css`
   position: absolute;
   left: 50%;
   top: 90%;
-  width: 200px;
+  width: auto;
+  padding: 10px 15px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #81bd00;
+  border: none;
+  font-weight: 500;
 `;
 
 const textStyles = css`
   position: absolute;
   left: 10%;
   top: 20%;
-  color: #fffcf2;
+  color: #404040;
+  font-weight: 500;
+  margin-right: 15px;
 `;
 
 const backArrowStyles = css`
   transform: scaleX(-1);
   position: absolute;
-  left: -5%;
+  left: -10%;
   top: 30%;
   z-index: 1;
 `;
@@ -42,7 +68,13 @@ const arrowStyles = css`
 const titleStyles = css`
   position: absolute;
   left: 20px;
-  top: -35%;
+  top: -50%;
+  // @media (max-width: 768px) {
+  //   font-size: 28px;
+  // }
+  // @media (max-width: 350px) {
+  //   font-size: 28px;
+  // }
 `;
 export default function HeaderComponent() {
   const data = [
@@ -64,7 +96,7 @@ export default function HeaderComponent() {
       id: 3,
       name: 'fog',
       text:
-        'consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis,',
+        'consequat vitae, eleifend ac, enim. Aliquam lorem  consequat, dapibus in, viverra quis,',
       buttonText: 'SHOP NOW',
     },
   ];
@@ -92,14 +124,9 @@ export default function HeaderComponent() {
   console.log('item', item);
   return (
     <div>
-      <img
-        height="700"
-        width="100%"
-        src={`../${getItem(item).name}.jpg`}
-        alt=""
-      />
+      <img css={imageStyles} src={`../${getItem(item).name}.jpg`} alt="" />
       <div css={componentStyles}>
-        <h2 css={titleStyles}>EMS Solutions</h2>
+        <h1 css={titleStyles}>EMS-Manufacturing</h1>
         <p css={textStyles}>{getItem(item).text}</p>
         <img
           css={backArrowStyles}

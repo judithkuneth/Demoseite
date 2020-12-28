@@ -12,6 +12,13 @@ const mainStyles = css`
   flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
+  p {
+    font-size: 14px;
+    a {
+      color: #81bd00;
+      font-weight: 500;
+    }
+  }
 `;
 
 const matrixStyles = css`
@@ -20,20 +27,28 @@ const matrixStyles = css`
   flex-wrap: wrap;
   justify-content: center;
   max-width: 1100px;
+  margin-top: 30px;
 `;
 
 const footerStyles = css`
+  background-color: #81bd00;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
+  flex-wrap: no-wrap;
   align-items: center;
   height: 70px;
+  justify-content: center;
+
   div {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    p {
+      color: #404040;
+    }
     a {
       margin: 0px 5px;
+      color: white;
     }
   }
 `;
@@ -46,9 +61,41 @@ const navStyles = css`
   div {
     a {
       margin: 0px 15px;
+      color: #404040;
+      font-weight: 500;
+    }
+  }
+  @media (min-width: 768px) {
+    div {
+      div {
+        display: none;
+      }
+    }
+  }
+  @media (max-width: 768px) {
+    div {
+      a {
+        display: none;
+      }
+      div:hover {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        z-index: 1;
+        position: relative;
+        border-radius: 5px;
+        background-color: #f1efef;
+
+        a {
+          display: flex;
+          font-size: 18px;
+          margin: 5px 15px;
+        }
+      }
     }
   }
 `;
+
 export default function Home() {
   return (
     <div>
@@ -81,6 +128,17 @@ export default function Home() {
           <Link href="/">
             <a>Produktsuche</a>
           </Link>
+          <div>
+            <img src="/hamburger.png" alt="" height="30px" />
+            <a>some Link</a>
+            <a>some Link</a>
+            <a>some Link</a>
+            <a>Produkte</a>
+            <a>EMS</a>
+            <a>Support</a>
+            <a>Über tele</a>
+            <a>Suche</a>
+          </div>
         </div>
       </nav>
 
@@ -89,11 +147,11 @@ export default function Home() {
         <div css={mainStyles}>
           <h2>Check out our product categories</h2>
           <p>
-            Here you can nd the data sheets of all our{' '}
-            <a>product categories.</a>
+            Here you can find the data sheets of all our{' '}
+            <a href="">product categories.</a>
           </p>
           <p>
-            Alternatively you can use our handy <a>product wizard.</a>
+            Alternatively you can use our handy <a href="">product wizard.</a>
           </p>
           <div css={matrixStyles}>
             <ImageComponent />
@@ -110,7 +168,11 @@ export default function Home() {
       </main>
 
       <footer css={footerStyles}>
-        <p>Firmenname | Straße Hausnummer | Adresse | Land</p>
+        <div>
+          <p style={{ fontWeight: '700', marginRight: '5px' }}>Firmenname </p>{' '}
+          <p> | Straße Hausnummer | Adresse | Land</p>
+        </div>
+
         <div>
           <a>Datenschutzerklärung</a>
           <a>AGB</a>
