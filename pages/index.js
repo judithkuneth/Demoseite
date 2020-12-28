@@ -13,6 +13,7 @@ const mainStyles = css`
   align-items: center;
   p {
     font-size: 14px;
+    text-align: center;
     a {
       color: #81bd00;
       font-weight: 500;
