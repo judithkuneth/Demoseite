@@ -3,7 +3,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { css, jsx } from '@emotion/react';
-// import Header from '../components/Header';
 import ImageComponent from '../components/ImageComponent';
 import HeaderComponent from '../components/HeaderComponent';
 
