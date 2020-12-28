@@ -3,40 +3,46 @@
 import { css, jsx } from '@emotion/react';
 import { useState } from 'react';
 
-const headerStyles = css`
-  position: relative;
-  text-align: center;
-  // color: white;
-  // margin: 10px;
-  // img {
-  //   height: 300px;
-  //   border-radius: 5%;
-  // }
-`;
-
-const componentInHeaderStyles = css`
+const componentStyles = css`
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-90%, -50%);
-
-  p {
-    color: #fffcf2;
-    text-align: center;
-  }
-  div {
-    position: relative;
-    h2 {
-      color: #fffcf2;
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-  }
+  top: 40%;
+  left: 10%;
+  height: 100px;
+  background-color: #bfabab66;
+  width: 450px;
 `;
 
-const backArrow = css`
+const buttonStyles = css`
+  position: absolute;
+  left: 50%;
+  top: 90%;
+  width: 200px;
+`;
+
+const textStyles = css`
+  position: absolute;
+  left: 10%;
+  top: 20%;
+  color: #fffcf2;
+`;
+
+const backArrowStyles = css`
   transform: scaleX(-1);
+  position: absolute;
+  left: -5%;
+  top: 30%;
+  z-index: 1;
+`;
+const arrowStyles = css`
+  position: absolute;
+  left: 95%;
+  top: 30%;
+  z-index: 1;
+`;
+const titleStyles = css`
+  position: absolute;
+  left: 20px;
+  top: -35%;
 `;
 export default function HeaderComponent() {
   const data = [
@@ -85,37 +91,35 @@ export default function HeaderComponent() {
   }
   console.log('item', item);
   return (
-    <div css={headerStyles}>
+    <div>
       <img
         height="700"
         width="100%"
         src={`../${getItem(item).name}.jpg`}
         alt=""
       />
-      <div css={componentInHeaderStyles}>
-        <div>
-          <h2>EMS Solutions</h2>
-
-          <img
-            css={backArrow}
-            src="../arrow.png"
-            height="50"
-            alt=""
-            onClick={(e) => {
-              next();
-            }}
-          />
-          <p>{getItem(item).text}</p>
-          <button>{getItem(item).buttonText}</button>
-          <img
-            src="../arrow.png"
-            height="50"
-            alt=""
-            onClick={(e) => {
-              next();
-            }}
-          />
-        </div>
+      <div css={componentStyles}>
+        <h2 css={titleStyles}>EMS Solutions</h2>
+        <p css={textStyles}>{getItem(item).text}</p>
+        <img
+          css={backArrowStyles}
+          src="../arrow.png"
+          height="50"
+          alt=""
+          onClick={(e) => {
+            next();
+          }}
+        />
+        <img
+          css={arrowStyles}
+          src="../arrow.png"
+          height="50"
+          alt=""
+          onClick={(e) => {
+            next();
+          }}
+        />
+        <button css={buttonStyles}>{getItem(item).buttonText}</button>
       </div>
     </div>
   );
