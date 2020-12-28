@@ -14,17 +14,24 @@ const headerStyles = css`
   // }
 `;
 
-const textInHeaderStyles = css`
+const componentInHeaderStyles = css`
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-90%, -50%);
-  h2 {
-    color: #fffcf2;
-  }
+
   p {
     color: #fffcf2;
     text-align: center;
+  }
+  div {
+    position: relative;
+    h2 {
+      color: #fffcf2;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
   }
 `;
 
@@ -79,29 +86,36 @@ export default function HeaderComponent() {
   console.log('item', item);
   return (
     <div css={headerStyles}>
-      <img width="100%" src={`../${getItem(item).name}.jpg`} alt="" />
-      <div css={textInHeaderStyles}>
-        <h2>EMS Solutions</h2>
+      <img
+        height="700"
+        width="100%"
+        src={`../${getItem(item).name}.jpg`}
+        alt=""
+      />
+      <div css={componentInHeaderStyles}>
+        <div>
+          <h2>EMS Solutions</h2>
 
-        <img
-          css={backArrow}
-          src="../arrow.png"
-          height="50"
-          alt=""
-          onClick={(e) => {
-            next();
-          }}
-        />
-        <p>{getItem(item).text}</p>
-        <button>{getItem(item).buttonText}</button>
-        <img
-          src="../arrow.png"
-          height="50"
-          alt=""
-          onClick={(e) => {
-            next();
-          }}
-        />
+          <img
+            css={backArrow}
+            src="../arrow.png"
+            height="50"
+            alt=""
+            onClick={(e) => {
+              next();
+            }}
+          />
+          <p>{getItem(item).text}</p>
+          <button>{getItem(item).buttonText}</button>
+          <img
+            src="../arrow.png"
+            height="50"
+            alt=""
+            onClick={(e) => {
+              next();
+            }}
+          />
+        </div>
       </div>
     </div>
   );
