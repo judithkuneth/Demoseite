@@ -27,7 +27,7 @@ const matrixStyles = css`
   flex-wrap: wrap;
   justify-content: center;
   max-width: 1100px;
-  margin-top: 30px;
+  margin: 30px 0px 50px 0px;
 `;
 
 const footerStyles = css`

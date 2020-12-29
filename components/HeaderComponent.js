@@ -81,13 +81,15 @@ export default function HeaderComponent() {
     {
       id: 1,
       name: 'nasa',
+      title: 'EMS-MANUFACTURING',
       text:
         'EMS along the entire value chain from electronics development and production to logistics',
       buttonText: 'HAVE A CLOSER LOOK',
     },
     {
       id: 2,
-      name: 'glacier',
+      name: 'drone',
+      title: 'SOME AMAZING TITLE',
       text:
         'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo',
       buttonText: 'READ MORE',
@@ -95,6 +97,7 @@ export default function HeaderComponent() {
     {
       id: 3,
       name: 'fog',
+      title: 'PRODUCTS & SERVICES',
       text:
         'consequat vitae, eleifend ac, enim. Aliquam lorem  consequat, dapibus in, viverra quis,',
       buttonText: 'SHOP NOW',
@@ -110,7 +113,7 @@ export default function HeaderComponent() {
   // const image = getItem(item).name;
   // const text = getItem(item).text;
   // const buttonText = getItem(item).buttonText;
-  console.log(getItem(item));
+
   function next() {
     if (item === 3) {
       setItem(1);
@@ -121,12 +124,12 @@ export default function HeaderComponent() {
       setItem(3);
     } else setItem(item - 1);
   }
-  console.log('item', item);
+
   return (
     <div>
       <img css={imageStyles} src={`../${getItem(item).name}.jpg`} alt="" />
       <div css={componentStyles}>
-        <h1 css={titleStyles}>EMS-Manufacturing</h1>
+        <h1 css={titleStyles}>{getItem(item).title}</h1>
         <p css={textStyles}>{getItem(item).text}</p>
         <img
           css={backArrowStyles}
