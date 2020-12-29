@@ -43,6 +43,7 @@ const footerStyles = css`
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-around;
     p {
       color: #404040;
     }
